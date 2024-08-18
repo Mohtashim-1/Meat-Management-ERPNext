@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-18 20:50:55.368631",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "dn_branch",
+  "remarks",
+  "column_break_eimj",
+  "qty",
+  "dn_number",
+  "column_break_hjwq",
+  "tag_number",
+  "dn_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "dn_branch",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "DN Branch",
+   "options": "Branch Name"
+  },
+  {
+   "fieldname": "dn_number",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "DN Number #"
+  },
+  {
+   "fieldname": "column_break_eimj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Qty",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_hjwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tag_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Tag Number"
+  },
+  {
+   "default": "Today",
+   "fieldname": "dn_date",
+   "fieldtype": "Date",
+   "label": "DN Date"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-08-18 23:52:08.462002",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Transfer From Branch CT",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

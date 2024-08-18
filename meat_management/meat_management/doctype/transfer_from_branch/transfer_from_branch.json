@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-08-18 20:50:24.701754",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_qoii",
+  "posting_date",
+  "branch",
+  "contact",
+  "column_break_xacq",
+  "posting_time",
+  "branch_address",
+  "section_break_ohsp",
+  "amended_from",
+  "incharge_section",
+  "incharge_name",
+  "column_break_gyqr",
+  "incharge_contact",
+  "zone_section",
+  "name1",
+  "column_break_zilt",
+  "contact_1",
+  "checker_section",
+  "name_1",
+  "column_break_xajf",
+  "contact_2",
+  "section_break_yrat",
+  "item"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_qoii",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Transfer From Branch",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch Name"
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fetch_from": "branch.address",
+   "fieldname": "branch_address",
+   "fieldtype": "Data",
+   "label": "Branch Address"
+  },
+  {
+   "fieldname": "column_break_xacq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "branch.branch_phone__ip",
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "incharge_section",
+   "fieldtype": "Section Break",
+   "label": "Incharge "
+  },
+  {
+   "fetch_from": "branch.incharge",
+   "fieldname": "incharge_name",
+   "fieldtype": "Data",
+   "label": "Incharge Name"
+  },
+  {
+   "fieldname": "zone_section",
+   "fieldtype": "Section Break",
+   "label": "Zone"
+  },
+  {
+   "fetch_from": "branch.zone_manager",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_zilt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "branch.zone_contact",
+   "fieldname": "contact_1",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "checker_section",
+   "fieldtype": "Section Break",
+   "label": "Checker"
+  },
+  {
+   "fetch_from": "branch.checker_name",
+   "fieldname": "name_1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_xajf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "branch.checker_contact",
+   "fieldname": "contact_2",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "column_break_gyqr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "branch.contact",
+   "fieldname": "incharge_contact",
+   "fieldtype": "Data",
+   "label": "Incharge Contact "
+  },
+  {
+   "fieldname": "section_break_ohsp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_yrat",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Transfer From Branch CT"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-18 23:47:24.799955",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Transfer From Branch",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
