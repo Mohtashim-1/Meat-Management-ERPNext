@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"oFHD1oPlRD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Goat And Meat</span>\",\"col\":12}},{\"id\":\"0TMAHbxNff\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branch\",\"col\":3}},{\"id\":\"zDbWRgXxz5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vendor Transfer\",\"col\":3}},{\"id\":\"NeGNgdx_BE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":3}},{\"id\":\"tm6C0xhS4N\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transfer From Branch\",\"col\":3}},{\"id\":\"2MFHRRbgDn\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Xf3UYX_oIH\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"vAXJ-6Uyc1\",\"type\":\"card\",\"data\":{\"card_name\":\"Branch Transaction\",\"col\":4}},{\"id\":\"8UYBhAwbeJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Transaction\",\"col\":4}},{\"id\":\"nqiiGZN6Jb\",\"type\":\"card\",\"data\":{\"card_name\":\"Madarsa\",\"col\":4}}]",
+ "content": "[{\"id\":\"oFHD1oPlRD\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Goat And Meat</span>\",\"col\":12}},{\"id\":\"0TMAHbxNff\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branch\",\"col\":3}},{\"id\":\"zDbWRgXxz5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vendor Transfer\",\"col\":3}},{\"id\":\"NeGNgdx_BE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":3}},{\"id\":\"tm6C0xhS4N\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Transfer From Branch\",\"col\":3}},{\"id\":\"2MFHRRbgDn\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"Xf3UYX_oIH\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"vAXJ-6Uyc1\",\"type\":\"card\",\"data\":{\"card_name\":\"Branch Transaction\",\"col\":4}},{\"id\":\"8UYBhAwbeJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Transaction\",\"col\":4}},{\"id\":\"nqiiGZN6Jb\",\"type\":\"card\",\"data\":{\"card_name\":\"Madarsa\",\"col\":4}},{\"id\":\"4TauUmBx84\",\"type\":\"card\",\"data\":{\"card_name\":\"Staff Transaction\",\"col\":4}}]",
  "creation": "2024-08-19 00:53:22.161824",
  "custom_blocks": [],
  "docstatus": 0,
@@ -188,9 +188,38 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff Transaction",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff Detail",
+   "link_count": 0,
+   "link_to": "Staff Detail",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Staff Meat",
+   "link_count": 0,
+   "link_to": "Staff Meat",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-08-19 02:06:33.255539",
+ "modified": "2024-08-19 04:10:17.171540",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Goat And Meat",
