@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:TFB-{YY}-{MM}-{DD}-{#####}",
  "creation": "2024-08-18 20:50:24.701754",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,6 +13,11 @@
   "column_break_xacq",
   "posting_time",
   "branch_address",
+  "section_break_xecj",
+  "slaughter",
+  "warehouse",
+  "column_break_kybw",
+  "slaughter_incharge",
   "section_break_ohsp",
   "amended_from",
   "incharge_section",
@@ -27,7 +33,9 @@
   "column_break_xajf",
   "contact_2",
   "section_break_yrat",
-  "item"
+  "item",
+  "remarks_section",
+  "small_text_emwe"
  ],
  "fields": [
   {
@@ -154,15 +162,51 @@
    "fieldtype": "Table",
    "label": "Item",
    "options": "Transfer From Branch CT"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "small_text_emwe",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "section_break_xecj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "branch.slaughter",
+   "fieldname": "slaughter",
+   "fieldtype": "Data",
+   "label": "Slaughter"
+  },
+  {
+   "fetch_from": "branch.warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Data",
+   "label": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_kybw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "branch.slaughter_incharge",
+   "fieldname": "slaughter_incharge",
+   "fieldtype": "Data",
+   "label": "Slaughter Incharge"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-18 23:47:24.799955",
+ "modified": "2024-08-19 00:30:04.170356",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Transfer From Branch",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -179,7 +223,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "branch"
 }

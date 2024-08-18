@@ -51,13 +51,16 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "1",
    "fieldname": "qty",
    "fieldtype": "Float",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Qty",
-   "non_negative": 1
+   "non_negative": 1,
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_hjwq",
@@ -86,7 +89,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-18 23:52:08.462002",
+ "modified": "2024-08-19 00:07:21.857965",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Transfer From Branch CT",

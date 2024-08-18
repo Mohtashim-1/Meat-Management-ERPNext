@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:BRN-{YY}-{MM}-{DD}-{###}",
  "creation": "2024-08-18 20:52:21.715770",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -14,6 +15,12 @@
   "address",
   "branch_phone__ip",
   "amended_from",
+  "slaughter_section",
+  "slaughter",
+  "column_break_urco",
+  "slaughter_incharge",
+  "column_break_qrbj",
+  "warehouse",
   "checker_section",
   "checker_name",
   "column_break_ekgt",
@@ -128,15 +135,47 @@
    "fieldname": "zone_contact",
    "fieldtype": "Data",
    "label": "Zone Contact"
+  },
+  {
+   "fieldname": "slaughter_section",
+   "fieldtype": "Section Break",
+   "label": "Slaughter"
+  },
+  {
+   "fieldname": "slaughter",
+   "fieldtype": "Link",
+   "label": "Slaughter",
+   "options": "Slaughter"
+  },
+  {
+   "fetch_from": "slaughter.incharge",
+   "fieldname": "slaughter_incharge",
+   "fieldtype": "Data",
+   "label": "Slaughter Incharge"
+  },
+  {
+   "fetch_from": "slaughter.warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Data",
+   "label": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_urco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_qrbj",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-18 23:44:26.287329",
+ "modified": "2024-08-19 00:29:35.815197",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Branch Name",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -153,7 +192,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "branch_name"
 }
