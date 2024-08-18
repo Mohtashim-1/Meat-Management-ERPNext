@@ -10,7 +10,7 @@ class TransferFromBranch(Document):
 		self.send_data()
 
 	def send_data(self):
-		# if self.docstatus == 1:
+		if self.docstatus == 1:
 			items = []
 			for item in self.item:
 				items.append({
