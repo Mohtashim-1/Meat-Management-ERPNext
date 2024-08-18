@@ -1,0 +1,169 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VF-{YY}-{MM}-{DD}-{#####}",
+ "creation": "2024-08-19 00:58:14.028636",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ldpx",
+  "amended_from",
+  "section_break_xmrt",
+  "date",
+  "supplier",
+  "column_break_cwwi",
+  "time",
+  "slaughter_section",
+  "name1",
+  "column_break_feee",
+  "warehouse",
+  "column_break_tnmc",
+  "incharge",
+  "item_section",
+  "item",
+  "section_break_antz",
+  "total_qty",
+  "column_break_ytfu",
+  "total_amount",
+  "remarks_section",
+  "small_text_eltb"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ldpx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Vendor Form",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_xmrt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_cwwi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "slaughter_section",
+   "fieldtype": "Section Break",
+   "label": "Slaughter"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Slaughter"
+  },
+  {
+   "fieldname": "column_break_feee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Data",
+   "label": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_tnmc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.incharge",
+   "fieldname": "incharge",
+   "fieldtype": "Data",
+   "label": "Incharge"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "small_text_eltb",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Item"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Vendor Form CT"
+  },
+  {
+   "fieldname": "section_break_antz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty"
+  },
+  {
+   "fieldname": "column_break_ytfu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-19 01:13:00.727602",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Vendor Form",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
