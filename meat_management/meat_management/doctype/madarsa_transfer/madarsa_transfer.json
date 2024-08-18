@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MT-{YY}-{MM}-{DD}-{#####}",
+ "creation": "2024-08-19 01:47:15.234242",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xmrt",
+  "date",
+  "care_off",
+  "column_break_cwwi",
+  "time",
+  "case_number",
+  "column_break_pkip",
+  "madarsa",
+  "madarsa_number",
+  "slaughter_section",
+  "name1",
+  "column_break_feee",
+  "warehouse",
+  "column_break_tnmc",
+  "incharge",
+  "item_section",
+  "item",
+  "section_break_antz",
+  "total_qty",
+  "column_break_ytfu",
+  "remarks_section",
+  "small_text_eltb",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Madarsa Transfer",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_xmrt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_cwwi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  },
+  {
+   "fieldname": "slaughter_section",
+   "fieldtype": "Section Break",
+   "label": "Slaughter"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Link",
+   "label": "Name",
+   "options": "Slaughter"
+  },
+  {
+   "fieldname": "column_break_feee",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.warehouse",
+   "fieldname": "warehouse",
+   "fieldtype": "Data",
+   "label": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_tnmc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "name1.incharge",
+   "fieldname": "incharge",
+   "fieldtype": "Data",
+   "label": "Incharge"
+  },
+  {
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Item"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Item",
+   "options": "Madarsa Transfer CT"
+  },
+  {
+   "fieldname": "section_break_antz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty"
+  },
+  {
+   "fieldname": "column_break_ytfu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "small_text_eltb",
+   "fieldtype": "Small Text"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Madarsa Transfer",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "madarsa",
+   "fieldtype": "Link",
+   "label": "Madarsa",
+   "options": "Madarsa Registration"
+  },
+  {
+   "fieldname": "column_break_pkip",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "madarsa.madarsa_number",
+   "fieldname": "madarsa_number",
+   "fieldtype": "Data",
+   "label": "Madarsa Number"
+  },
+  {
+   "fetch_from": "madarsa.case_number",
+   "fieldname": "case_number",
+   "fieldtype": "Data",
+   "label": "Case Number"
+  },
+  {
+   "fetch_from": "madarsa.care_off",
+   "fieldname": "care_off",
+   "fieldtype": "Data",
+   "label": "Care Off"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-19 01:56:13.725958",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Madarsa Transfer",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

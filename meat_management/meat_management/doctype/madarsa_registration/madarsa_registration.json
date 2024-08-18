@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MR-{YY}-{####}",
+ "creation": "2024-08-19 01:35:35.053236",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "name1",
+  "madarsa_number",
+  "care_off",
+  "address",
+  "column_break_tyvt",
+  "case_number",
+  "geolocation_smxt",
+  "section_break_ntle",
+  "imam_name",
+  "sadar_name",
+  "column_break_uakf",
+  "imam_contact",
+  "sadar_contact"
+ ],
+ "fields": [
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "madarsa_number",
+   "fieldtype": "Data",
+   "label": "Madarsa Number"
+  },
+  {
+   "fieldname": "column_break_tyvt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "case_number",
+   "fieldtype": "Data",
+   "label": "Case Number"
+  },
+  {
+   "fieldname": "section_break_ntle",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "imam_name",
+   "fieldtype": "Data",
+   "label": "Imam Name"
+  },
+  {
+   "fieldname": "sadar_name",
+   "fieldtype": "Data",
+   "label": "Sadar Name"
+  },
+  {
+   "fieldname": "column_break_uakf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "imam_contact",
+   "fieldtype": "Data",
+   "label": "Imam Contact"
+  },
+  {
+   "fieldname": "sadar_contact",
+   "fieldtype": "Data",
+   "label": "Sadar Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "care_off",
+   "fieldtype": "Data",
+   "label": "Care Off"
+  },
+  {
+   "fieldname": "geolocation_smxt",
+   "fieldtype": "Geolocation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-19 01:48:50.692843",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Madarsa Registration",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name1",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
