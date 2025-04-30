@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:GP-{YY}-{MM}-{DD}-{#####}",
  "creation": "2025-05-01 02:39:56.043872",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,12 +9,34 @@
   "posting_date_and_time",
   "column_break_kwnv",
   "party_type",
+  "column_break_dsnv",
+  "slaughter",
   "column_break_zhqz",
   "donor_name",
-  "kitchen",
   "saail",
+  "kitchen",
+  "donor_detail_section",
+  "branch",
+  "column_break_mkuy",
+  "dn_no",
+  "column_break_hcvw",
+  "category",
+  "column_break_pxtr",
+  "cutting_charges",
+  "saail_detail_section",
+  "slip_no",
+  "column_break_zxqh",
+  "care_off",
+  "kitchen_detail_section",
+  "tag_no",
+  "driver_name",
+  "column_break_wmov",
+  "driver_id",
+  "vehicle_no",
   "item_section",
   "gate_pass_item",
+  "remarks_section",
+  "remarks",
   "section_break_zwro",
   "amended_from"
  ],
@@ -63,16 +86,21 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.party_type==\"Donor\"",
    "fieldname": "donor_name",
    "fieldtype": "Data",
    "label": "Donor"
   },
   {
+   "default": "Logistic",
+   "depends_on": "eval:doc.party_type==\"Kitchen\"\r\n",
    "fieldname": "kitchen",
    "fieldtype": "Select",
-   "label": "Kitchen"
+   "label": "Kitchen",
+   "options": "Logistic"
   },
   {
+   "depends_on": "eval:doc.party_type==\"Saail\"",
    "fieldname": "saail",
    "fieldtype": "Data",
    "label": "Saail "
@@ -87,15 +115,128 @@
    "fieldtype": "Table",
    "label": "Gate Pass Item",
    "options": "Gate Pass Item"
+  },
+  {
+   "depends_on": "eval:doc.party_type==\"Donor\"",
+   "fieldname": "donor_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Donor Detail"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch Name"
+  },
+  {
+   "fieldname": "column_break_mkuy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dn_no",
+   "fieldtype": "Data",
+   "label": "DN No"
+  },
+  {
+   "fieldname": "column_break_hcvw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_pxtr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cutting_charges",
+   "fieldtype": "Float",
+   "label": "Cutting Charges"
+  },
+  {
+   "depends_on": "eval:doc.party_type==\"Saail\"",
+   "fieldname": "saail_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Saail Detail"
+  },
+  {
+   "fieldname": "slip_no",
+   "fieldtype": "Data",
+   "label": "Slip No"
+  },
+  {
+   "fieldname": "column_break_zxqh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "care_off",
+   "fieldtype": "Data",
+   "label": "Care Off "
+  },
+  {
+   "depends_on": "eval:doc.party_type==\"Kitchen\"",
+   "fieldname": "kitchen_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Kitchen Detail"
+  },
+  {
+   "fieldname": "tag_no",
+   "fieldtype": "Data",
+   "label": "Tag No"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "column_break_wmov",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_id",
+   "fieldtype": "Data",
+   "label": "Driver ID"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "slaughter",
+   "fieldtype": "Link",
+   "label": "Slaughter",
+   "link_filters": "[[\"Slaughter\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Slaughter"
+  },
+  {
+   "fieldname": "column_break_dsnv",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-01 02:45:26.650170",
+ "modified": "2025-05-01 03:02:20.152773",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Gate Pass",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -114,5 +255,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }
