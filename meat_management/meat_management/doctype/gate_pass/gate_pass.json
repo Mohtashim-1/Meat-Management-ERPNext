@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-01 02:39:56.043872",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date_and_time",
+  "column_break_kwnv",
+  "party_type",
+  "column_break_zhqz",
+  "donor_name",
+  "kitchen",
+  "saail",
+  "item_section",
+  "gate_pass_item",
+  "section_break_zwro",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_zwro",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Pass",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_date_and_time",
+   "fieldtype": "Datetime",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Posting Date and Time"
+  },
+  {
+   "fieldname": "column_break_kwnv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Party Type",
+   "options": "Donor\nSaail\nKitchen",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zhqz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "donor_name",
+   "fieldtype": "Data",
+   "label": "Donor"
+  },
+  {
+   "fieldname": "kitchen",
+   "fieldtype": "Select",
+   "label": "Kitchen"
+  },
+  {
+   "fieldname": "saail",
+   "fieldtype": "Data",
+   "label": "Saail "
+  },
+  {
+   "fieldname": "item_section",
+   "fieldtype": "Section Break",
+   "label": "Item"
+  },
+  {
+   "fieldname": "gate_pass_item",
+   "fieldtype": "Table",
+   "label": "Gate Pass Item",
+   "options": "Gate Pass Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-01 02:45:26.650170",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Gate Pass",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
