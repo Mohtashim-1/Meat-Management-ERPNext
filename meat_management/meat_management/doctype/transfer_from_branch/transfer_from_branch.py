@@ -50,39 +50,63 @@ class TransferFromBranch(Document):
             })
             transfer_item.insert(ignore_permissions=True)
             transfer_item.submit()
-            
+   
+ 
 @frappe.whitelist()
 def create_slaughter_operation(docname):
-    
     doc = frappe.get_doc("Transfer From Branch", docname)
     sl = frappe.get_doc("Slaughter", doc.slaughter)
     sl_w = sl.warehouse
-    
+
+    bn = frappe.get_doc("Branch Name", doc.branch)
+    br_w = bn.warehouse
+
+    # --- Step 1: Material Issue (raw items from branch) ---
+    issue_items = []
+    for item in doc.item:
+        issue_items.append({
+            'item_code': item.item,
+            'qty': item.qty,
+            'uom': item.uom,  # Assuming uom is available on the child table
+            's_warehouse': br_w
+        })
+
+    stock_issue = frappe.get_doc({
+        'doctype': "Stock Entry",
+        'stock_entry_type': "Material Issue",
+        'items': issue_items
+    })
+    stock_issue.insert(ignore_permissions=True)
+    stock_issue.submit()
+
+    # --- Step 2: Material Receipt (processed parts to slaughter) ---
+    receipt_items = []
+
     for i in doc.item:
         item_code = i.item
         item_qty = i.qty
 
-        # Get the original item and its custom item parts
         item_doc = frappe.get_doc("Item", item_code)
-        item_parts = item_doc.get("custom_item_part")  # assuming this is the child table fieldname
+        item_parts = item_doc.get("custom_item_part")
 
         for part in item_parts:
             item_part_item = part.parts
-            item_part_qty = part.quantity * item_qty  # multiply by qty of main item
+            item_part_qty = part.quantity * item_qty
             item_part_uom = part.uom
 
-            # Create Stock Entry for each part (Material Request or Material Issue)
-            stock_entry = frappe.get_doc({
-                "doctype": "Stock Entry",
-                "stock_entry_type": "Material Receipt",
-                "items": [{
-                    "item_code": item_part_item,
-                    "qty": item_part_qty,
-                    "uom": item_part_uom,
-                    't_warehouse': sl_w  # you may need to set this on your DocType
-                }]
+            receipt_items.append({
+                "item_code": item_part_item,
+                "qty": item_part_qty,
+                "uom": item_part_uom,
+                "t_warehouse": sl_w
             })
-            stock_entry.insert(ignore_permissions=True)
-            stock_entry.submit()
+
+    stock_receipt = frappe.get_doc({
+        'doctype': "Stock Entry",
+        'stock_entry_type': "Material Receipt",
+        'items': receipt_items
+    })
+    stock_receipt.insert(ignore_permissions=True)
+    stock_receipt.submit()
 
     return {"status": "success", "message": "Slaughter operation created successfully"}

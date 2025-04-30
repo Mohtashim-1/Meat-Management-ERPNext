@@ -13,6 +13,7 @@
   "qty",
   "dn_number",
   "column_break_hjwq",
+  "uom",
   "tag_number",
   "dn_date"
  ],
@@ -84,12 +85,22 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "fetch_from": "item.stock_uom",
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "UOM",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-19 00:07:21.857965",
+ "modified": "2025-05-01 02:36:21.804940",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Transfer From Branch CT",
