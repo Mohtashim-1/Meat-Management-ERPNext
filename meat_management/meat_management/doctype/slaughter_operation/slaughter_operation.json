@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SO-{YY}-{MM}-{DD}-{####}",
+ "creation": "2025-05-01 02:06:52.934419",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "posting_date_and_time",
+  "column_break_mjmt",
+  "branch",
+  "column_break_dgxl",
+  "slaughter",
+  "items_section",
+  "slaughter_item",
+  "section_break_33zs",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_33zs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Slaughter Operation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Posting Date and Time"
+  },
+  {
+   "fieldname": "column_break_mjmt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "link_filters": "[[\"Branch Name\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Branch Name"
+  },
+  {
+   "fieldname": "column_break_dgxl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "slaughter",
+   "fieldtype": "Link",
+   "label": "Slaughter",
+   "link_filters": "[[\"Slaughter\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Slaughter"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Items"
+  },
+  {
+   "fieldname": "slaughter_item",
+   "fieldtype": "Table",
+   "label": "Slaughter Item",
+   "options": "Slaughter Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-01 02:13:04.942517",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Slaughter Operation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
