@@ -1,0 +1,68 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-01 01:14:18.522065",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "parts",
+  "column_break_tpsz",
+  "quantity",
+  "column_break_ktvd",
+  "uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "parts",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Parts",
+   "link_filters": "[[\"Item\",\"disabled\",\"=\",0]]",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_tpsz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Quantity",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_ktvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "UOM",
+   "options": "UOM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-01 01:15:59.410533",
+ "modified_by": "Administrator",
+ "module": "Meat Management",
+ "name": "Item Parts",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
