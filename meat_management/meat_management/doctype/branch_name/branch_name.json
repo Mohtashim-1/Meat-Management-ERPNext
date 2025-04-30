@@ -10,6 +10,7 @@
   "branch_name",
   "branch_email_address",
   "branch_phone__ip",
+  "warehouse",
   "column_break_sryl",
   "incharge",
   "contact",
@@ -79,12 +80,20 @@
   {
    "fieldname": "column_break_ixlk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-01 01:34:42.321321",
+ "modified": "2025-05-01 01:43:29.227859",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Branch Name",

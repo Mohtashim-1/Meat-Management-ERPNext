@@ -28,8 +28,10 @@
   {
    "fieldname": "warehouse",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Warehouse",
-   "options": "Warehouse"
+   "options": "Warehouse",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_mqso",
@@ -42,7 +44,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-19 00:22:28.327392",
+ "modified": "2025-05-01 01:52:02.786371",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Slaughter",
