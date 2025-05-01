@@ -27,9 +27,15 @@
   "driver_id",
   "vehicle_no",
   "section_break_vbgg",
+  "dn_no",
+  "column_break_rjzu",
+  "branch",
+  "column_break_oxtn",
+  "category",
   "donor_details",
   "item_section",
   "gate_pass_item",
+  "total_qty",
   "remarks_section",
   "remarks",
   "section_break_zwro",
@@ -198,14 +204,46 @@
   {
    "fieldname": "donor_details",
    "fieldtype": "Table",
+   "hidden": 1,
    "label": "Donor Details",
    "options": "Donor Detail"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "precision": "2"
+  },
+  {
+   "fieldname": "dn_no",
+   "fieldtype": "Data",
+   "label": "DN No"
+  },
+  {
+   "fieldname": "column_break_rjzu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch Name"
+  },
+  {
+   "fieldname": "column_break_oxtn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "label": "Category",
+   "options": "Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-01 21:18:33.788069",
+ "modified": "2025-05-02 02:42:19.906184",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Gate Pass",

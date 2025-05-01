@@ -10,7 +10,9 @@
   "column_break_eipm",
   "qty",
   "column_break_ekkr",
-  "uom"
+  "uom",
+  "column_break_fpjp",
+  "dn_no"
  ],
  "fields": [
   {
@@ -54,12 +56,25 @@
   {
    "fieldname": "column_break_ekkr",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fpjp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dn_no",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "DN No"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-05-01 02:44:35.221404",
+ "modified": "2025-05-02 01:34:34.552191",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Gate Pass Item",
