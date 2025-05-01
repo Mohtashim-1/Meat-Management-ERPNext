@@ -4,6 +4,7 @@
 import frappe
 from frappe.model.document import Document
 import frappe.utils
+import json
 
 
 class StaffMeat(Document):
@@ -13,27 +14,8 @@ class StaffMeat(Document):
 		# self.check_period()
 		self.check_15_day_gap()
 
-	@frappe.whitelist()
-	def get_data(self):
-		rec = frappe.db.sql("""
-			SELECT sd.employee_code FROM `tabStaff Detail` as sd
-			WHERE sd.active = 1
-			""", as_dict=1)
-		if len(rec) > 0:
-			self.data = []
-		for r in rec:
-			record_exists = frappe.db.exists(
-            "Meat Staff Bin",
-            {
-                "employee_code": r['employee_code'],
-                "period": self.period
-            }
-        )
-			if not record_exists:
-				self.append("data",{
-					"employee_code":r.employee_code
-				})
-		self.save()
+	
+
 	
 	def data_to_bin(self):
 		if self.docstatus == 1:
@@ -125,3 +107,34 @@ class StaffMeat(Document):
 						f"Next eligible date: {frappe.utils.formatdate(next_date, 'dd-MM-yyyy')}. Must wait {15 - days_difference} more day(s)."
 					)
 
+
+@frappe.whitelist()
+def get_data(doc):
+	doc = frappe.get_doc(json.loads(doc))
+
+	staff = frappe.db.get_all(
+		"Staff Detail",
+		filters={"active": 1},
+		fields=["employee_code", "name1", "department", "incharge", "salary", "active"]
+	)
+
+	doc.data = []
+
+	for s in staff:
+		already_received = frappe.db.exists("Meat Staff Bin", {
+			"employee_code": s.employee_code,
+			"period": doc.period
+		})
+		if not already_received:
+			doc.append("data", {
+				"employee_code": s.employee_code,
+				"name1": s.name1,
+				"department": s.department,
+				"incharge": s.incharge,
+				"salary": s.salary,
+				"active": s.active,
+				"qty": 1.5  # default if you want to auto-fill
+			})
+
+	doc.save()
+	return "done"
