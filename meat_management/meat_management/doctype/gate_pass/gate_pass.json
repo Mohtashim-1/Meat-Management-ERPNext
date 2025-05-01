@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "posting_date_and_time",
+  "cutting_charges",
   "column_break_kwnv",
   "party_type",
   "column_break_dsnv",
@@ -15,14 +16,6 @@
   "donor_name",
   "saail",
   "kitchen",
-  "donor_detail_section",
-  "branch",
-  "column_break_mkuy",
-  "dn_no",
-  "column_break_hcvw",
-  "category",
-  "column_break_pxtr",
-  "cutting_charges",
   "saail_detail_section",
   "slip_no",
   "column_break_zxqh",
@@ -33,6 +26,8 @@
   "column_break_wmov",
   "driver_id",
   "vehicle_no",
+  "section_break_vbgg",
+  "donor_details",
   "item_section",
   "gate_pass_item",
   "remarks_section",
@@ -118,40 +113,6 @@
   },
   {
    "depends_on": "eval:doc.party_type==\"Donor\"",
-   "fieldname": "donor_detail_section",
-   "fieldtype": "Section Break",
-   "label": "Donor Detail"
-  },
-  {
-   "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch Name"
-  },
-  {
-   "fieldname": "column_break_mkuy",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "dn_no",
-   "fieldtype": "Data",
-   "label": "DN No"
-  },
-  {
-   "fieldname": "column_break_hcvw",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "category",
-   "fieldtype": "Link",
-   "label": "Category",
-   "options": "Item"
-  },
-  {
-   "fieldname": "column_break_pxtr",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "cutting_charges",
    "fieldtype": "Float",
    "label": "Cutting Charges"
@@ -227,12 +188,24 @@
   {
    "fieldname": "column_break_dsnv",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.party_type==\"Donor\"",
+   "fieldname": "section_break_vbgg",
+   "fieldtype": "Section Break",
+   "label": "Donor Detail"
+  },
+  {
+   "fieldname": "donor_details",
+   "fieldtype": "Table",
+   "label": "Donor Details",
+   "options": "Donor Detail"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-05-01 03:02:20.152773",
+ "modified": "2025-05-01 21:18:33.788069",
  "modified_by": "Administrator",
  "module": "Meat Management",
  "name": "Gate Pass",

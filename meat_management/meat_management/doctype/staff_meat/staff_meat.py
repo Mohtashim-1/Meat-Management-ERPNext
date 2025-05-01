@@ -10,7 +10,8 @@ class StaffMeat(Document):
 	def validate(self):
 		self.data_to_bin()
 		self.data_to_se()
-		self.check_period()
+		# self.check_period()
+		self.check_15_day_gap()
 
 	@frappe.whitelist()
 	def get_data(self):
@@ -98,3 +99,29 @@ class StaffMeat(Document):
 			frappe.msgprint(f"Document not found: {e}")
 		except Exception as e:
 			frappe.msgprint(f"Error occurred: {e}")
+
+
+	def check_15_day_gap(self):
+		for row in self.data:
+			last_entry = frappe.db.sql("""
+				SELECT posting_date FROM `tabStaff Meat`
+				JOIN `tabStaff Meat CT` ON `tabStaff Meat`.name = `tabStaff Meat CT`.parent
+				WHERE `tabStaff Meat CT`.employee_code = %s
+				AND `tabStaff Meat`.docstatus = 1
+				AND `tabStaff Meat`.name != %s
+				ORDER BY `tabStaff Meat`.posting_date DESC
+				LIMIT 1
+			""", (row.employee_code, self.name), as_dict=True)
+
+			if last_entry:
+				last_date = last_entry[0].posting_date
+				current_date = frappe.utils.getdate(self.posting_date)
+				days_difference = (current_date - last_date).days
+
+				if days_difference < 15:
+					next_date = frappe.utils.add_days(last_date, 15)
+					frappe.throw(
+						f"Employee {row.employee_code} already received meat on {frappe.utils.formatdate(last_date, 'dd-MM-yyyy')}. "
+						f"Next eligible date: {frappe.utils.formatdate(next_date, 'dd-MM-yyyy')}. Must wait {15 - days_difference} more day(s)."
+					)
+
