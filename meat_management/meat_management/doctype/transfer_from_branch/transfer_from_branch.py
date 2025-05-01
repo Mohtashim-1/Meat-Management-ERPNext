@@ -68,7 +68,7 @@ def create_slaughter_operation(docname):
             'item_code': item.item,
             'qty': item.qty,
             'uom': item.uom,  # Assuming uom is available on the child table
-            's_warehouse': br_w
+            's_warehouse': sl_w
         })
 
     stock_issue = frappe.get_doc({
